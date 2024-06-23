@@ -1,0 +1,74 @@
+/* 重置浏览器默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+main {
+    display: flex;
+    gap: 30px; /* 增加两个矩形之间的间距 */
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* 增加矩形的宽度 */
+    height: 200px; /* 增加矩形的高度 */
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    text-decoration: none; /* 移除链接下划线 */
+    font-size: 1.2em;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+footer {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .section {
+        width: calc(50% - 15px); /* 响应式布局调整 */
+        height: 150px; /* 调整移动端矩形的高度 */
+    }
+}
