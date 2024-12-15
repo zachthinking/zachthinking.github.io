@@ -24,3 +24,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+
+# Google Analytics配置
+jekyll_analytics:
+  GoogleAnalytics:          # 使用 GoogleAnalytics
+    id: G-ZM7KN1DZ25        # 替换为您的跟踪ID
+    anonymizeIp: false      # 是否匿名化IP
