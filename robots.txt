@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zachthinking.github.io/sitemap.xml
