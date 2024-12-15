@@ -12,14 +12,20 @@ favicon: /favicon.ico
 logo: /assets/images/favicon-128x128.png
 
 # SEO 优化配置
-google_site_verification: ""  # 待填写
-baidu_site_verification: ""   # 待填写
+author: "Zach"
+lang: "zh-CN"
+google_site_verification: ""  # Google Search Console
+baidu_site_verification: ""   # 百度站长工具
 
-# 社交媒体和SEO增强
+# Open Graph / 社交媒体
 social:
   name: zachthinking
   links:
     - https://github.com/zachthinking
+    - https://twitter.com/zachthinking  # 如果有 Twitter 账号
+
+# 文章默认图片
+default_post_image: "/assets/images/default-post.jpg"
 
 # 性能和SEO插件
 markdown: kramdown
@@ -28,6 +34,24 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-last-modified-at
+
+# Jekyll SEO Tag 配置
+twitter:
+  username: zachthinking
+  card: summary_large_image
+
+facebook:
+  app_id: ""  # 如果有 Facebook 应用，填写这里
+  publisher: ""
+  admins: ""
+
+# 网站结构化数据
+schema:
+  "@type": "WebSite"
+  name: "扎克爱思的技术博客"
+  alternateName: "Zach's Tech Blog"
+  url: "https://zachthinking.github.io"
 
 # Google Analytics配置
 jekyll_analytics:
