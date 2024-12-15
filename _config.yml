@@ -1,0 +1,13 @@
+title: "扎克爱思的个人网站"
+email: zach.thinking@gmail.com
+description: >- 
+  记录技术、生活和思考
+baseurl: "" 
+url: "https://zachthinking.github.io"
+github_username: zachthinking
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
