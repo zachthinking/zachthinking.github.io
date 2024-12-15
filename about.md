@@ -2,6 +2,8 @@
 layout: page
 title: 关于我
 permalink: /about/
+keywords: 软件开发者, 技术博主, 个人简介, 专业技能, 技术栈
+description: 了解更多关于Zach的信息，一个专注于软件开发和技术创新的开发者。
 ---
 
 ## 个人简介
