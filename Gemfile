@@ -1,10 +1,10 @@
 source "https://mirrors.tuna.tsinghua.edu.cn/rubygems"
 
 gem "github-pages", group: :jekyll_plugins
-gem "jekyll-seo-tag"
-
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do

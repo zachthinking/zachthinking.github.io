@@ -1,13 +1,26 @@
-title: "扎克爱思的个人网站"
+title: "扎克爱思 | 技术博客 | 个人成长"
 email: zach.thinking@gmail.com
 description: >- 
-  记录技术、生活和思考
+  专注于分享软件开发、技术趋势、个人成长和创新思考。涵盖编程、职业发展、技术洞察和生活感悟。
+keywords: "软件开发, 技术博客, 程序员, 个人成长, 职业发展"
 baseurl: "" 
 url: "https://zachthinking.github.io"
 github_username: zachthinking
 
+# SEO 优化配置
+google_site_verification: ""  # 待填写
+baidu_site_verification: ""   # 待填写
+
+# 社交媒体和SEO增强
+social:
+  name: zachthinking
+  links:
+    - https://github.com/zachthinking
+
+# 性能和SEO插件
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
