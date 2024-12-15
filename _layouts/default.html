@@ -12,38 +12,17 @@
     {% seo %}
     {% feed_meta %}
     {% include head.html %}
-    
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            flex-grow: 1;
-        }
-        header, footer {
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
 </head>
-<body>
-    <header>
+<body class="flex flex-col min-h-screen m-0 font-sans">
+    <header class="text-center py-5">
         {% include header.html %}
     </header>
     
-    <div class="container">
+    <div class="container mx-auto px-5 flex-grow max-w-3xl">
         {{ content }}
     </div>
     
-    <footer>
+    <footer class="text-center py-5">
         {% include footer.html %}
     </footer>
 </body>

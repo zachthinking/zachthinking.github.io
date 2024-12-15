@@ -8,6 +8,11 @@
 2. 安装依赖: `bundle install`
 3. 本地运行: `bundle exec jekyll serve`
 
+### 本地开发2
+
+1. 实时预览 Jekyll：`bundle exec jekyll serve --livereload`
+2. 实时编译 Tailwind CSS：`npm run watch:css`
+
 ## 博客特点
 
 - 使用 Jekyll 静态站点生成器

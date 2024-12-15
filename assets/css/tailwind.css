@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* 基础文本样式 */
+    p {
+        @apply mb-4 text-gray-800 leading-relaxed;
+    }
+
+    /* 标题样式 */
+    h1 {
+        @apply text-4xl font-bold mb-6 text-gray-900;
+    }
+    h2 {
+        @apply text-3xl font-bold mb-4 text-gray-900;
+    }
+    h3 {
+        @apply text-2xl font-bold mb-3 text-gray-900;
+    }
+    h4 {
+        @apply text-xl font-bold mb-2 text-gray-900;
+    }
+
+    /* 链接样式 */
+    a {
+        @apply text-blue-600 hover:text-blue-800 transition-colors;
+    }
+
+    /* 列表样式 */
+    ul {
+        @apply list-disc list-inside mb-4;
+    }
+    ol {
+        @apply list-decimal list-inside mb-4;
+    }
+    li {
+        @apply mb-2;
+    }
+
+    /* 代码块样式 */
+    pre {
+        @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
+    }
+    code {
+        @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+    }
+
+    /* 引用样式 */
+    blockquote {
+        @apply border-l-4 border-gray-300 pl-4 italic my-4;
+    }
+}
