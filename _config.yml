@@ -7,6 +7,10 @@ baseurl: ""
 url: "https://zachthinking.github.io"
 github_username: zachthinking
 
+# 网站图标配置
+favicon: /favicon.ico
+logo: /assets/images/favicon-128x128.png
+
 # SEO 优化配置
 google_site_verification: ""  # 待填写
 baidu_site_verification: ""   # 待填写
