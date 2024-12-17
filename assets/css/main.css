@@ -673,6 +673,24 @@ video {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
+/* 导航栏样式 */
+nav ul {
+  margin: 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+nav li {
+  margin: 0px;
+}
+nav li a {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+  text-decoration-line: none;
+}
+nav li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+}
 /* TOC 样式 */
 .post-toc-container {
   float: right;

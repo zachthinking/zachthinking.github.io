@@ -77,6 +77,19 @@
         @apply block text-gray-600 hover:text-blue-600 no-underline truncate py-0.5;
     }
 
+    /* 导航栏样式 */
+    nav ul {
+        @apply list-none p-0 m-0;
+    }
+
+    nav li {
+        @apply m-0;
+    }
+
+    nav li a {
+        @apply text-gray-600 hover:text-blue-600 no-underline;
+    }
+
     /* TOC 样式 */
     .post-toc-container {
         @apply float-right ml-8 mb-8;
