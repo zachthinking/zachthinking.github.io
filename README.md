@@ -12,9 +12,13 @@
 
 1. 实时预览 Jekyll：`bundle exec jekyll serve --livereload`
 2. 实时编译 Tailwind CSS：`npm run watch:css`
+3. 更换代码语法高亮样式：`rougify style github > assets/css/syntax.css`
 
 ## 博客特点
 
 - 使用 Jekyll 静态站点生成器
 - 简洁的 Minima 主题
 - GitHub Actions 自动部署
+- 语法高亮支持
+- SEO 优化
+- 网站地图

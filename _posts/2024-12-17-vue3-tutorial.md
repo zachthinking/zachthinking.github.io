@@ -122,7 +122,7 @@ export default {
 
 下面是一个简单的待办事项应用示例：
 
-```javascript
+```vue
 <template>
   <div class="todo-app">
     <input 

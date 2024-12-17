@@ -29,6 +29,9 @@ default_post_image: "/assets/images/default-post.jpg"
 
 # 性能和SEO插件
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 theme: minima
 plugins:
   - jekyll-seo-tag
