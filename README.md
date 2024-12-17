@@ -13,6 +13,7 @@
 1. 实时预览 Jekyll：`bundle exec jekyll serve --livereload`
 2. 实时编译 Tailwind CSS：`npm run watch:css`
 3. 更换代码语法高亮样式：`rougify style github > assets/css/syntax.css`
+4. 修改样式文件：`assets/css/tailwind.css`
 
 ## 博客特点
 

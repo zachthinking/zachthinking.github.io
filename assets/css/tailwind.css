@@ -22,32 +22,96 @@
         @apply text-xl font-bold mb-2 text-gray-900;
     }
 
-    /* 链接样式 */
-    a {
-        @apply text-blue-600 hover:text-blue-800 transition-colors;
-    }
-
     /* 列表样式 */
     ul {
-        @apply list-disc list-inside mb-4;
+        @apply list-disc pl-5 mb-4;
     }
     ol {
-        @apply list-decimal list-inside mb-4;
+        @apply list-decimal pl-5 mb-4;
     }
     li {
         @apply mb-2;
     }
 
-    /* 代码块样式 */
-    pre {
-        @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
-    }
-    code {
-        @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+    /* 链接样式 */
+    a {
+        @apply text-blue-600 hover:text-blue-800 transition;
     }
 
     /* 引用样式 */
     blockquote {
-        @apply border-l-4 border-gray-300 pl-4 italic my-4;
+        @apply border-l-4 border-gray-300 pl-4 italic;
+    }
+}
+
+@layer components {
+    /* 文章页面布局 */
+    .post-article {
+        @apply max-w-[1280px] mx-auto;
+    }
+
+    /* 文章目录容器 */
+    .post-toc-container {
+        @apply fixed top-[100px] w-[260px] max-h-[calc(100vh-120px)] overflow-y-auto z-10;
+        right: max(40px, calc((100% - 1280px) / 2 - 280px));
+    }
+
+    /* 文章目录样式 */
+    .post-toc {
+        @apply p-4 bg-gray-50 rounded-lg shadow-sm;
+    }
+
+    .post-toc h2 {
+        @apply text-xl font-bold mb-4 text-gray-800;
+    }
+
+    .post-toc ul {
+        @apply m-0 pl-5 list-none;
+    }
+
+    .post-toc li {
+        @apply my-2 text-sm leading-relaxed;
+    }
+
+    .post-toc a {
+        @apply block text-gray-600 hover:text-blue-600 no-underline truncate py-0.5;
+    }
+
+    /* TOC 样式 */
+    .post-toc-container {
+        @apply float-right ml-8 mb-8;
+    }
+
+    .post-toc {
+        @apply sticky top-8 bg-white p-4 rounded-lg border border-gray-200 shadow-sm;
+        max-width: 280px;
+    }
+
+    .toc-list {
+        @apply text-sm space-y-1;
+    }
+
+    .toc-list li {
+        @apply leading-snug;
+    }
+
+    .toc-list ul {
+        padding-left: 1em;
+        @apply space-y-1 mt-1;
+    }
+
+    .toc-list a {
+        @apply text-gray-600 hover:text-blue-600 no-underline block;
+    }
+
+    /* 响应式布局 */
+    @media (max-width: 1199px) {
+        .post-article {
+            @apply max-w-3xl pr-0;
+        }
+
+        .post-toc-container {
+            @apply hidden;
+        }
     }
 }
