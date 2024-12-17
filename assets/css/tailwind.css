@@ -122,6 +122,20 @@
         @apply text-gray-600 hover:text-blue-600 no-underline block;
     }
 
+    /* 返回顶部按钮样式 */
+    #back-to-top {
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    #back-to-top:hover {
+        transform: translateY(-3px);
+    }
+
+    #back-to-top.invisible {
+        pointer-events: none;
+    }
+
     /* 响应式布局 */
     @media (max-width: 1199px) {
         .post-article {
