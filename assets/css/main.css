@@ -702,12 +702,13 @@ video {
 .toc-list {
   font-size: 0.875rem;
   line-height: 1.25rem;
+        padding-left: 0;
 }
 .toc-list li {
   line-height: 1.375;
 }
 .toc-list ul {
-        padding-left: 1em;
+        padding-left: 0;
         margin-top: 0.25rem;
     }
 .toc-list ul > :not([hidden]) ~ :not([hidden]) {
@@ -715,6 +716,9 @@ video {
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
 }
+.toc-list ul ul {
+        padding-left: 1em;
+    }
 .toc-list a {
   display: block;
   --tw-text-opacity: 1;
@@ -839,17 +843,14 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-
 .hover\:text-blue-500:hover {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
 }
-
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
 }
-
 .hover\:text-blue-800:hover {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity, 1));

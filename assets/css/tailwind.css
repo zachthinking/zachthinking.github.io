@@ -89,6 +89,7 @@
 
     .toc-list {
         @apply text-sm space-y-1;
+        padding-left: 0;
     }
 
     .toc-list li {
@@ -96,8 +97,12 @@
     }
 
     .toc-list ul {
-        padding-left: 1em;
+        padding-left: 0;
         @apply space-y-1 mt-1;
+    }
+
+    .toc-list ul ul {
+        padding-left: 1em;
     }
 
     .toc-list a {
