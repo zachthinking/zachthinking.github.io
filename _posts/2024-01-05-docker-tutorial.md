@@ -38,7 +38,8 @@ Docker 使用客户端-服务器架构：
 
 ### Linux 安装
 
-Ubuntu/Debian:
+Ubuntu/Debian 系统下的安装命令：
+
 ```bash
 # 更新包索引
 sudo apt-get update
@@ -110,7 +111,7 @@ Dockerfile 是用于构建 Docker 镜像的文本文件。
 
 ### 基本结构
 
-```dockerfile
+```docker
 # 基础镜像
 FROM node:14
 
@@ -240,7 +241,8 @@ docker run -v /host/path:/container/path nginx
 ### 镜像构建
 
 1. **使用多阶段构建**
-```dockerfile
+
+```docker
 # 构建阶段
 FROM node:14 AS builder
 WORKDIR /app
@@ -260,11 +262,13 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 ### 容器安全
 
 1. **以非 root 用户运行**
-```dockerfile
+
+```docker
 USER node
 ```
 
 2. **限制资源使用**
+
 ```bash
 docker run --memory="512m" --cpus="1.5" nginx
 ```
@@ -274,7 +278,8 @@ docker run --memory="512m" --cpus="1.5" nginx
 ### 部署 Web 应用
 
 1. **创建 Dockerfile**
-```dockerfile
+
+```docker
 FROM node:14-alpine
 
 WORKDIR /app
@@ -289,6 +294,7 @@ CMD ["npm", "start"]
 ```
 
 2. **创建 docker-compose.yml**
+
 ```yaml
 version: '3'
 services:
@@ -302,6 +308,7 @@ services:
 ```
 
 3. **部署命令**
+
 ```bash
 # 构建并启动
 docker-compose up -d --build
