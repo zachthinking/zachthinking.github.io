@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="mt-8">
+    <div class="tag-section">
+        <h2 class="tag-header">标签</h2>
+        <div class="tag-list">
+            {% assign tags = site.tags | sort %}
+            {% for tag in tags %}
+                <a href="#{{ tag[0] }}" class="tag-pill">
+                    {{ tag[0] }} <span class="tag-count">({{ tag[1].size }})</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% for tag in tags %}
+        <div id="{{ tag[0] }}" class="tag-section">
+            <h3 class="tag-header">{{ tag[0] }}</h3>
+            <ul class="post-list">
+                {% for post in tag[1] %}
+                    <li class="post-item hover:bg-gray-50 rounded-lg transition-colors duration-200">
+                        <article>
+                            <div class="post-meta">
+                                <time class="post-date">{{ post.date | date: "%Y-%m-%d" }}</time>
+                                <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+                            </div>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
