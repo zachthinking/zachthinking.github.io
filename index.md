@@ -10,8 +10,3 @@ keywords: 软件开发, 技术博客, 程序员, 个人成长, 职业发展
 ## 🚀 关于本站
 
 这是一个专注于分享**软件开发**、**技术趋势**和**个人成长**的技术博客。
-
-### 我的技术栈
-- 编程语言：Python, JavaScript, Java
-- 框架：Django, Vue, Spring Boot
-- 工具：Git, Docker
