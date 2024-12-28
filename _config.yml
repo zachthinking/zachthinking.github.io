@@ -17,6 +17,9 @@ lang: "zh-CN"
 google_site_verification: "googleda045c13e3750e5d"  # Google Search Console
 baidu_site_verification: ""   # 百度站长工具
 
+# 文章链接格式
+permalink: /:title/
+
 # Open Graph / 社交媒体
 social:
   name: zachthinking
