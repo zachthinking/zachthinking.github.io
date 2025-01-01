@@ -3,6 +3,7 @@ title: "Next-intl 完全指南：轻松实现 Next.js 应用国际化"
 date: 2025-01-01
 categories: [技术, React, Next.js]
 tags: [next-intl, 国际化, React, Next.js]
+toc: true
 ---
 
 ## 什么是 next-intl？
