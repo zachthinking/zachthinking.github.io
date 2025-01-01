@@ -2,6 +2,7 @@
     <a href="/" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition">{{ site.title }}</a>
     <nav>
         <ul class="flex space-x-4">
+            <li><div id="docsearch" class="relative w-full max-w-md mx-auto"></div></li>
             <li><a href="/categories" class="text-gray-600 hover:text-blue-500">分类</a></li>
             <li><a href="/projects" class="text-gray-600 hover:text-blue-500">作品</a></li>
             <li><a href="/about" class="text-gray-600 hover:text-blue-500">关于</a></li>
@@ -10,3 +11,20 @@
         </ul>
     </nav>
 </nav>
+<!-- DocSearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.docsearch) {
+    window.docsearch({
+      appId: '{{site.docsearch.app_id}}',
+      apiKey: '{{site.docsearch.api_key}}',
+      indexName: '{{site.docsearch.index_name}}',
+      container: '#docsearch',
+      debug: false
+    });
+  }
+});
+</script>

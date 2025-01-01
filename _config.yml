@@ -64,3 +64,9 @@ jekyll_analytics:
   GoogleAnalytics:          # 使用 GoogleAnalytics
     id: G-ZM7KN1DZ25        # 替换为您的跟踪ID
     anonymizeIp: false      # 是否匿名化IP
+
+# DocSearch Configuration
+docsearch:
+  app_id: '0XMWOULI1D'
+  api_key: '063180d820f08549fed3077ddb1543b0'
+  index_name: 'zachthinkingio'
