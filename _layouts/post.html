@@ -30,6 +30,11 @@ layout: default
           </span>
       {%- endif -%}
     </p>
+    
+    <!-- 新增：文章字数和阅读时间 -->
+    <p class="post-stats text-gray-600 text-sm">
+      <span id="word-count">0</span> 字 • 预计阅读 <span id="reading-time">0</span> 分钟
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -48,3 +53,5 @@ layout: default
     {% endif %}
   </footer>
 </article>
+
+<script src="/assets/js/word-count.js"></script>
