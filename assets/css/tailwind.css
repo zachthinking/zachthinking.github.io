@@ -186,6 +186,27 @@
         @apply flex gap-2 mt-2;
     }
 
+    /* 文章内容中的表格样式 */
+    .post-content table {
+      @apply w-full border-collapse shadow-md rounded-lg overflow-hidden;
+    }
+    
+    .post-content table thead {
+      @apply bg-gray-100 text-gray-700;
+    }
+    
+    .post-content table th, .post-content table td {
+      @apply px-4 py-3 text-left border-b border-gray-200;
+    }
+    
+    .post-content table tr:nth-child(even) {
+      @apply bg-gray-50;
+    }
+    
+    .post-content table tr:hover {
+      @apply bg-gray-100 transition-colors duration-300;
+    }
+
     /* 响应式布局 */
     @media (max-width: 1199px) {
         .post-article {
