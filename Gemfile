@@ -8,6 +8,7 @@ group :jekyll_plugins do
   gem "jekyll-analytics"
   gem "rouge"
   gem "wdm", ">= 0.1.0" if Gem.win_platform?
+  gem 'jekyll-toc'
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do

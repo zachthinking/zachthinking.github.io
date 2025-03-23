@@ -41,6 +41,15 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-last-modified-at
+  - jekyll-toc
+
+toc:
+  min_level: 1
+  max_level: 4
+  list_class: toc-list
+  sublist_class: toc-sublist
+  item_class: toc-item
+  link_class: toc-link
 
 # Jekyll SEO Tag 配置
 twitter:

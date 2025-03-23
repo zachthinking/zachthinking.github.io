@@ -26,8 +26,10 @@
         {% include footer.html %}
     </footer>
     
-    {% include clarity.html %}
-    {% include analytics.html %}
+    {% if jekyll.environment == 'production' %}
+        {% include clarity.html %}
+        {% include analytics.html %}
+    {% endif %}
     {% include back-to-top.html %}
 </body>
 </html>
