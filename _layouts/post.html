@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row">
-  <article class="prose prose-lg max-w-full w-full md:max-w-[600px] lg:max-w-[800px] lg:w-[800px] mx-auto lg:pr-20 bg-gray-50 p-8 rounded-lg shadow-sm" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="mb-8 border-b pb-6">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" itemprop="name headline">{{ page.title | escape }}</h1>
+  <article class="prose prose-sm max-w-full w-full md:max-w-[600px] lg:max-w-[800px] lg:w-[800px] mx-auto lg:pr-20 bg-gray-50 p-8 rounded-lg shadow-sm" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="mb-2 border-b pb-4">
+      <h1 class="text-xl md:text-2xl font-bold text-gray-900 mb-4" itemprop="name headline">{{ page.title | escape }}</h1>
       
       <div class="flex flex-wrap items-center text-gray-600 text-sm space-x-4">
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" class="flex items-center">
