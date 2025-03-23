@@ -59,7 +59,7 @@ layout: default
 
 <script src="/assets/js/word-count.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const tocContainer = document.querySelector('.toc-content');
     if (tocContainer) {
       tocContainer.querySelectorAll('a').forEach(link => {
@@ -75,6 +75,45 @@ layout: default
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // TOC 高亮功能
+    const headings = document.querySelectorAll('.markdown-body h2, .markdown-body h3');
+    const tocLinks = document.querySelectorAll('.toc-container a');
+
+    function highlightTOC() {
+        let currentHeading = null;
+        
+        // 找到当前可视区域最靠近顶部的标题
+        headings.forEach(heading => {
+            const rect = heading.getBoundingClientRect();
+            if (rect.top <= 100) {
+                currentHeading = heading;
+            }
+        });
+
+        // 移除所有高亮
+        tocLinks.forEach(link => {
+            link.classList.remove('text-blue-600', 'font-bold');
+            link.classList.add('text-gray-600');
+        });
+
+        // 高亮对应的 TOC 链接
+        if (currentHeading) {
+            const currentLink = Array.from(tocLinks).find(link => 
+                link.getAttribute('href') === `#${currentHeading.id}`
+            );
+            
+            if (currentLink) {
+                currentLink.classList.remove('text-gray-600');
+                currentLink.classList.add('text-blue-600', 'font-bold');
+            }
+        }
+    }
+
+    // 初始化和滚动时高亮
+    highlightTOC();
+    window.addEventListener('scroll', highlightTOC);
+
+    // 代码块复制功能
     const blocks = document.querySelectorAll('pre');
     blocks.forEach(block => {
         const copyBtn = document.createElement('button');
