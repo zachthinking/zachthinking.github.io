@@ -117,6 +117,7 @@
     padding: 1em;
     overflow-x: auto;
     margin-bottom: 1.2em;
+    position: relative;
 }
 
 .markdown-body pre code {
@@ -156,6 +157,58 @@
     margin: 1.5em auto;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 代码块复制按钮样式 */
+pre {
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.3s;
+    z-index: 10;
+}
+
+pre:hover .copy-btn {
+    opacity: 0.7;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.9);
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -5px;
+    right: 40px;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.copy-btn:hover .copy-tooltip {
+    opacity: 1;
 }
 
 /* TOC 容器样式 */

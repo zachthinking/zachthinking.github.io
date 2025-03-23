@@ -68,3 +68,48 @@ layout: default
     }
   });
 </script>
+
+{% if page.script %}
+{{ page.script }}
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const blocks = document.querySelectorAll('pre');
+    blocks.forEach(block => {
+        const copyBtn = document.createElement('button');
+        copyBtn.innerHTML = '📋<span class="copy-tooltip">复制代码</span>';
+        copyBtn.classList.add('copy-btn');
+        
+        copyBtn.onclick = () => {
+            const code = block.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                // 创建一个临时的提示元素
+                const successTooltip = document.createElement('div');
+                successTooltip.textContent = '已复制到剪贴板';
+                successTooltip.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: rgba(0,0,0,0.7);
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    z-index: 1000;
+                `;
+                document.body.appendChild(successTooltip);
+                
+                // 2秒后移除提示
+                setTimeout(() => {
+                    document.body.removeChild(successTooltip);
+                }, 2000);
+            }).catch(err => {
+                console.error('复制失败', err);
+            });
+        };
+        
+        block.appendChild(copyBtn);
+    });
+});
+</script>
