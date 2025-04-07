@@ -1,11 +1,24 @@
 ---
 layout: post
-title: "Windows Docker Desktop 配置国内镜像源教程"
-date: 2024-01-06 10:39:53 +0800
+title: "Windows Docker Desktop 配置国内镜像源教程（2025年4月更新）"
+date: 2025-04-07 23:39:53 +0800
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
 ---
+
+**最新说明**：由于不可描述的原因，很多镜像源地址已经失效。
+
+现在可以使用的镜像源地址：
+
+- https://docker-0.unsee.tech/
+
+其他的，可以参考 [目前国内可用Docker镜像源汇总（截至2025年3月） - CoderJia](https://www.coderjia.cn/archives/dba3f94c-a021-468a-8ac6-e840f85867ea)
+
+以下是旧文：
+
+---
+
 
 在国内使用 Docker Desktop for Windows 时，由于网络原因，从默认的 Docker Hub 下载镜像可能会很慢。本教程将介绍如何配置国内镜像源，以提升镜像的下载速度。
 
