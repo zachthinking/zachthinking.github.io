@@ -20,5 +20,6 @@ description: 了解更多关于Zach的信息，一个专注于软件开发和技
 致力于通过技术解决实际问题，不断学习和成长。
 
 ### 联系方式
-- **邮箱**：zach.thinking@gmail.com
+
 - **GitHub**：[@zachthinking](https://github.com/zachthinking)
+- **新的博客网站**：[https://blog.zachthinking.com/](https://blog.zachthinking.com/)
