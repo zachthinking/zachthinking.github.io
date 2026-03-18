@@ -15,44 +15,105 @@ toc: true
 
 可以一键复制到 `daemon.json` 文件，或 `Docker Desktop` 的 `Docker Engine` 菜单下：
 
-<div style="border:1px solid #e1e4e8;border-radius:6px;padding:16px;margin:16px 0;background:#f6f8fa;">
+<div style="border:1px solid #e1e4e8;border-radius:6px;padding:16px;margin:16px 0;">
+
+  <!-- 标题 + 按钮 -->
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-    <strong>daemon.json 配置（镜像源）</strong>
+    <strong>daemon.json 配置</strong>
     <button onclick="copyDockerConfig()" style="padding:6px 12px;font-size:12px;cursor:pointer;border:1px solid #ccc;border-radius:4px;background:#fff;">
       一键复制
     </button>
   </div>
 
-  <pre id="docker-config" style="margin:0;font-size:13px;overflow:auto;">
+  <!-- 代码块 -->
+  <pre id="docker-config" style="margin:0;font-size:13px;overflow:auto;background:#f6f8fa;padding:12px;border-radius:6px;">
 {
   "registry-mirrors": [
     "https://docker.m.daocloud.io"
   ]
 }
   </pre>
+
+</div>
+
+  <!-- 赞赏区 -->
+  <div style="display:flex;flex-direction:column;align-items:center;margin-top:16px;">
+    <img src="https://cdn.zachthinking.com/donate_wechat.png"
+         style="width:240px;height:240px;border-radius:6px;" />
+    <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;">
+      ☕ 如果这个配置帮你节省了时间，可以扫码支持一下
+    </div>
+  </div>
+
+<!-- Toast 提示 -->
+<div id="copy-toast" style="
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#333;
+  color:#fff;
+  padding:8px 16px;
+  border-radius:6px;
+  font-size:13px;
+  opacity:0;
+  transition:opacity 0.3s;
+  z-index:9999;
+">
+  已复制到剪贴板
 </div>
 
 <script>
+function showToast(message) {
+  const toast = document.getElementById("copy-toast");
+  toast.innerText = message;
+  toast.style.opacity = "1";
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+  }, 1500);
+}
+
 function copyDockerConfig() {
   const text = document.getElementById("docker-config").innerText;
+
   navigator.clipboard.writeText(text).then(function() {
-    alert("已复制到剪贴板");
+    showToast("已复制到剪贴板");
   }, function(err) {
-    alert("复制失败，请手动复制");
+    showToast("复制失败，请手动复制");
   });
 }
 </script>
 
-
-
-以下是旧文：
-
----
-
+## 教程开始
 
 在国内使用 Docker Desktop for Windows 时，由于网络原因，从默认的 Docker Hub 下载镜像可能会很慢。本教程将介绍如何配置国内镜像源，以提升镜像的下载速度。
 
 ## 常用的国内 Docker 镜像源
+
+<div style="
+  border:1px solid #ffe58f;
+  background:#fffbe6;
+  border-radius:6px;
+  padding:12px 16px;
+  margin:16px 0;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+">
+
+  <!-- 图标 -->
+  <div style="font-size:18px;line-height:1;">
+    ⚠️
+  </div>
+
+  <!-- 文本 -->
+  <div style="font-size:14px;color:#664d03;">
+    <strong>注意：</strong>
+    下面这些配置镜像源地址已经失效，只是为了演示如何配置，真实环境下请使用上面验证过的镜像源地址。
+  </div>
+
+</div>
 
 以下是一些常用的国内 Docker 镜像源地址：
 
