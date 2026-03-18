@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Windows Docker Desktop 配置国内镜像源教程（2025年4月更新）"
-date: 2025-04-07 23:39:53 +0800
+title: "Windows Docker Desktop 配置国内镜像源教程（2026年3月更新）"
+date: 2026-03-18 23:39:53 +0800
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
@@ -11,9 +11,39 @@ toc: true
 
 现在可以使用的镜像源地址：
 
-- https://docker-0.unsee.tech/
+- docker.m.daocloud.io
 
-其他的，可以参考 [目前国内可用Docker镜像源汇总（截至2025年3月） - CoderJia](https://www.coderjia.cn/archives/dba3f94c-a021-468a-8ac6-e840f85867ea)
+可以一键复制到 `daemon.json` 文件，或 `Docker Desktop` 的 `Docker Engine` 菜单下：
+
+<div style="border:1px solid #e1e4e8;border-radius:6px;padding:16px;margin:16px 0;background:#f6f8fa;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+    <strong>daemon.json 配置（镜像源）</strong>
+    <button onclick="copyDockerConfig()" style="padding:6px 12px;font-size:12px;cursor:pointer;border:1px solid #ccc;border-radius:4px;background:#fff;">
+      一键复制
+    </button>
+  </div>
+
+  <pre id="docker-config" style="margin:0;font-size:13px;overflow:auto;">
+{
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io"
+  ]
+}
+  </pre>
+</div>
+
+<script>
+function copyDockerConfig() {
+  const text = document.getElementById("docker-config").innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    alert("已复制到剪贴板");
+  }, function(err) {
+    alert("复制失败，请手动复制");
+  });
+}
+</script>
+
+
 
 以下是旧文：
 
