@@ -36,6 +36,17 @@ toc: true
 
 </div>
 
+<!-- 付费清单引导（TODO: 替换 PAID_LINK 为面包多产品链接） -->
+<div style="border:1px solid #bfdbfe;background:#eff6ff;border-radius:6px;padding:16px;margin:16px 0;">
+  <strong style="font-size:15px;">🚀 一个镜像源不够用？</strong>
+  <div style="font-size:14px;color:#1e3a8a;margin-top:6px;line-height:1.7;">
+    我维护了一份《国内可用 Docker 镜像源清单》：<strong>4 个实测可用源</strong>（2026 年 10 月实测，真实拉取验证通过；每月重新实测，失效 48 小时内替换），含一键复制配置。<strong>1.99 元，一次购买永久查看更新</strong>。
+  </div>
+  <a href="PAID_LINK" target="_blank" rel="nofollow" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#2563eb;color:#fff;font-size:14px;border-radius:6px;text-decoration:none;">
+    解锁完整清单 →
+  </a>
+</div>
+
   <!-- 赞赏区 -->
   <div style="display:flex;flex-direction:column;align-items:center;margin-top:16px;">
     <img src="https://cdn.zachthinking.com/donate_wechat.png"
