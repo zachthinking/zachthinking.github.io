@@ -1,0 +1,56 @@
+name: IndexNow 推送
+
+# 文章变更后自动把 URL 提交给 IndexNow（Bing / Yandex 等支持该协议的搜索引擎会快速抓取）
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 提交变更的文章 URL 到 IndexNow
+        env:
+          INDEXNOW_KEY: 72d2ab650da0109cb7f7dda13db6e4a5
+        run: |
+          set -euo pipefail
+          HOST="https://zachthinking.github.io"
+
+          URLS='[]'
+          add_url() { URLS=$(echo "$URLS" | jq --arg u "$1" '. + [$u]'); }
+
+          # 本次推送中变更的文章（含新增/修改/删除，删除后提交可促使搜索引擎重新抓取并下架）
+          CHANGED=""
+          if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- '_posts/*.md' || true)
+          fi
+
+          if [ -n "$CHANGED" ]; then
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              base=$(basename "$f" .md)
+              slug=${base:11}   # 去掉文件名前的 YYYY-MM-DD- 前缀，对应 permalink: /posts/:title/
+              add_url "$HOST/posts/$slug/"
+            done <<< "$CHANGED"
+          fi
+
+          # 首页文章列表每次都可能变化，一并提交
+          add_url "$HOST/"
+
+          PAYLOAD=$(jq -n \
+            --arg host "zachthinking.github.io" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "$HOST/$INDEXNOW_KEY.txt" \
+            --argjson urlList "$URLS" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+
+          echo "提交内容：$PAYLOAD"
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD" \
+            -w "\nIndexNow 响应状态: %{http_code}\n"
