@@ -41,6 +41,7 @@ interface FullscreenElement extends HTMLElement {
 
 #### 组件结构
 
+{% raw %}
 ```vue
 <template>
   <el-container>
@@ -120,6 +121,7 @@ onUnmounted(() => {
 }
 </style>
 ```
+{% endraw %}
 
 ### 3. 兼容性处理
 

@@ -6,6 +6,7 @@ keywords: "软件开发, 技术博客, 程序员, 个人成长, 职业发展"
 baseurl: "" 
 url: "https://zachthinking.github.io"
 github_username: zachthinking
+repository: zachthinking/zachthinking.github.io
 
 # 网站图标配置
 favicon: /favicon.ico
@@ -59,11 +60,8 @@ schema:
   alternateName: "Zach's Tech Blog"
   url: "https://zachthinking.github.io"
 
-# Google Analytics配置
-jekyll_analytics:
-  GoogleAnalytics:          # 使用 GoogleAnalytics
-    id: G-ZM7KN1DZ25        # 替换为您的跟踪ID
-    anonymizeIp: false      # 是否匿名化IP
+# Google Analytics 走 _includes/analytics.html（GA4 gtag.js），
+# 不再使用 jekyll-analytics 插件（仅支持已淘汰的 UA，且会让本地构建崩溃）
 
 # DocSearch Configuration
 docsearch:

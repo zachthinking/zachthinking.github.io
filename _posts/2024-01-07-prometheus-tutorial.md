@@ -151,6 +151,7 @@ scrape_configs:
 
 创建告警规则文件 `alert.rules.yml`：
 
+{% raw %}
 ```yaml
 groups:
 - name: example
@@ -164,6 +165,7 @@ groups:
       summary: "High request latency on {{ $labels.instance }}"
       description: "Request latency is above 1s (current value: {{ $value }}s)"
 ```
+{% endraw %}
 
 ### 配置 Alertmanager
 
