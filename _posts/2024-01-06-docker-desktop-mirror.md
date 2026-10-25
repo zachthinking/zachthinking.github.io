@@ -1,20 +1,22 @@
 ---
 layout: post
-title: "Windows Docker Desktop 配置国内镜像源教程（2026年3月更新）"
-date: 2026-03-18 23:39:53 +0800
+title: "Windows Docker Desktop 配置国内镜像源教程（2026年10月实测）"
+date: 2026-10-25 14:00:00 +0800
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
 related: [github-proxy-mirror]
 ---
 
-**最新说明**：由于不可描述的原因，很多镜像源地址已经失效。
+**最新说明**：由于不可描述的原因，很多镜像源地址已经失效。以下地址于 **2026 年 10 月 25 日在国内网络实测**（registry API + 完整 `docker pull` 双重验证）：
 
-现在可以使用的镜像源地址：
+- `https://docker.1ms.run`（最快，`hello-world` 完整拉取约 5.5 秒）
+- `https://docker.m.daocloud.io`（约 9.8 秒）
+- `https://docker.xuanyuan.me`（约 11.5 秒）
+- `https://hub.rat.dev`（约 14.9 秒）
+- `https://dockerproxy.net`（约 16.1 秒）
 
-- docker.m.daocloud.io
-
-可以一键复制到 `daemon.json` 文件，或 `Docker Desktop` 的 `Docker Engine` 菜单下：
+可以一键复制到 `daemon.json` 文件，或 `Docker Desktop` 的 `Docker Engine` 菜单下（建议全部写上，Docker 会按顺序尝试，失效自动 fallback）：
 
 <div style="border:1px solid #e1e4e8;border-radius:6px;padding:16px;margin:16px 0;">
 
@@ -30,19 +32,39 @@ related: [github-proxy-mirror]
   <pre id="docker-config" style="margin:0;font-size:13px;overflow:auto;background:#f6f8fa;padding:12px;border-radius:6px;">
 {
   "registry-mirrors": [
-    "https://docker.m.daocloud.io"
+    "https://docker.1ms.run",
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me",
+    "https://hub.rat.dev",
+    "https://dockerproxy.net"
   ]
 }
   </pre>
 
 </div>
 
-  <!-- 赞赏区 -->
-  <div style="display:flex;flex-direction:column;align-items:center;margin-top:16px;">
-    <img src="https://cdn.zachthinking.com/donate_wechat.png"
-         style="width:240px;height:240px;border-radius:6px;" />
-    <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;">
-      ☕ 如果这个配置帮你节省了时间，可以扫码支持一下
+以下地址 2026 年 10 月 25 日实测**已不可用**，老教程里看到请直接跳过：
+
+- `docker.unsee.tech`、`docker.mirrors.ustc.edu.cn`、`mirror.baidubce.com`（TLS 连接被中断）
+- `docker.nju.edu.cn`、`dockerhub.azk8s.cn`（403，已不对公网开放）
+- `docker.1panel.live`（403，地区限制误伤，部分国内 IP 也被拦）
+- `registry.docker-cn.com`（连接超时，官方中国镜像早已关停）
+
+  <!-- 公众号 + 赞赏区 -->
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:16px;">
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="/assets/images/mp-zha-ke-ai-si-qr.jpg"
+           style="width:200px;height:200px;border-radius:6px;" />
+      <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;max-width:220px;">
+        📮 公众号「扎克爱思」：这里写工具，那里写生活——一个程序员如何让 AI 接管自己的工作、健康和投资
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="https://cdn.zachthinking.com/donate_wechat.png"
+           style="width:200px;height:200px;border-radius:6px;" />
+      <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;max-width:220px;">
+        ☕ 如果这个配置帮你节省了时间，可以扫码支持一下
+      </div>
     </div>
   </div>
 
@@ -116,10 +138,10 @@ function copyDockerConfig() {
 
 </div>
 
-以下是一些常用的国内 Docker 镜像源地址：
+以下是一些老教程里常见的 Docker 镜像源地址（**均已失效**，仅作演示）：
 
 - 阿里云：`https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
-- 腾讯云：`https://mirror.ccs.tencentyun.com`
+- 腾讯云：`https://mirror.ccs.tencentyun.com`（仅腾讯云内网可用）
 - 华为云：`https://mirrors.huaweicloud.com/repository/docker-ce`
 - 中科大：`https://mirrors.ustc.edu.cn/docker-ce`
 - 网易：`https://mirrors.163.com/docker-ce`
@@ -136,9 +158,11 @@ function copyDockerConfig() {
 ```json
 {
   "registry-mirrors": [
-    "https://mirror.ccs.tencentyun.com",
-    "https://mirrors.aliyun.com",
-    "https://hub-mirror.c.163.com"
+    "https://docker.1ms.run",
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me",
+    "https://hub.rat.dev",
+    "https://dockerproxy.net"
   ]
 }
 ```
@@ -155,9 +179,11 @@ function copyDockerConfig() {
 ```json
 {
   "registry-mirrors": [
-    "https://mirror.ccs.tencentyun.com",
-    "https://mirrors.aliyun.com",
-    "https://hub-mirror.c.163.com"
+    "https://docker.1ms.run",
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me",
+    "https://hub.rat.dev",
+    "https://dockerproxy.net"
   ]
 }
 ```
