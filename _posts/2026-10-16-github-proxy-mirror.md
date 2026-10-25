@@ -1,18 +1,18 @@
 ---
 layout: post
 title: "GitHub 加速镜像最新可用地址（2026年10月实测）"
-date: 2026-10-16 22:30:00 +0800
+date: 2026-10-25 12:00:00 +0800
 categories: [GitHub, 教程]
 tags: [github, 镜像, 加速, ghproxy]
 toc: true
 ---
 
-**最新说明**：GitHub 直连在国内时好时坏，raw 和 release 下载经常超时。以下加速地址于 **2026 年 10 月 16 日在国内网络实测**，raw 文件、release 压缩包、`git clone` 三种方式均验证通过：
+**最新说明**：GitHub 直连在国内时好时坏，raw 和 release 下载经常超时。以下加速地址于 **2026 年 10 月 25 日在国内网络实测**（raw 文件、release 附件、`git clone` 三种方式逐项验证）：
 
-- `https://ghfast.top/`
-- `https://gh-proxy.com/`
-- `https://ghproxy.net/`
-- `https://gh.llkk.cc/`
+- `https://ghfast.top/`（三种方式全部通过）
+- `https://gh-proxy.com/`（三种方式全部通过）
+- `https://gh.llkk.cc/`（三种方式全部通过，偶发超时重试即可）
+- `https://ghproxy.net/`（raw 和 `git clone` 可用；release 大文件不稳定，下载附件优先用前三个）
 
 用法：**把原始 GitHub 链接完整拼在镜像地址后面**即可，不用改链接本身。
 
@@ -66,13 +66,13 @@ toc: true
 
 ## 已失效地址（避坑）
 
-以下曾经流行的地址，2026 年 10 月 16 日实测**已不可用**，如果老教程里看到请直接跳过：
+以下曾经流行的地址，2026 年 10 月 25 日实测**已不可用**，如果老教程里看到请直接跳过：
 
 - `ghproxy.com` / `mirror.ghproxy.com`（原最大镜像站，已关停）
 - `github.moeyy.xyz`（连接失败）
 - `ghproxy.cc`（连接失败）
 - `hub.gitmirror.com`（连接失败）
-- `gitclone.com`（502）
+- `gitclone.com`（404，已关停）
 - `kkgithub.com`（连接失败）
 - `gh.ddlc.top`（限流 429，偶尔可用）
 
