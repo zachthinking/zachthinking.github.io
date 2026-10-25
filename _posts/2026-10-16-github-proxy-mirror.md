@@ -5,7 +5,7 @@ date: 2026-10-25 12:00:00 +0800
 categories: [GitHub, 教程]
 tags: [github, 镜像, 加速, ghproxy]
 toc: true
-related: [docker-desktop-mirror]
+related: [docker-desktop-mirror, huggingface-mirror]
 ---
 
 **最新说明**：GitHub 直连在国内时好时坏，raw 和 release 下载经常超时。以下加速地址于 **2026 年 10 月 25 日在国内网络实测**（raw 文件、release 附件、`git clone` 三种方式逐项验证）：

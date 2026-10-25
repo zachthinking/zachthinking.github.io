@@ -5,7 +5,7 @@ date: 2026-10-25 14:00:00 +0800
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
-related: [github-proxy-mirror]
+related: [github-proxy-mirror, huggingface-mirror]
 ---
 
 **最新说明**：由于不可描述的原因，很多镜像源地址已经失效。以下地址于 **2026 年 10 月 25 日在国内网络实测**（registry API + 完整 `docker pull` 双重验证）：
