@@ -98,11 +98,20 @@ function copyBlock(id) {
 }
 </script>
 
-  <!-- 赞赏区 -->
-  <div style="display:flex;flex-direction:column;align-items:center;margin-top:16px;">
-    <img src="https://cdn.zachthinking.com/donate_wechat.png"
-         style="width:240px;height:240px;border-radius:6px;" />
-    <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;">
-      ☕ 如果这份列表帮你节省了时间，可以扫码支持一下
+  <!-- 公众号 + 赞赏区 -->
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:16px;">
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="/assets/images/mp-zha-ke-ai-si-qr.jpg"
+           style="width:200px;height:200px;border-radius:6px;" />
+      <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;max-width:220px;">
+        📮 公众号「扎克爱思」：这里写工具，那里写生活——一个程序员如何让 AI 接管自己的工作、健康和投资
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="https://cdn.zachthinking.com/donate_wechat.png"
+           style="width:200px;height:200px;border-radius:6px;" />
+      <div style="font-size:13px;color:#666;margin-top:8px;text-align:center;max-width:220px;">
+        ☕ 如果这份列表帮你节省了时间，可以扫码支持一下
+      </div>
     </div>
   </div>
