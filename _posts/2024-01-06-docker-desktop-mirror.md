@@ -5,6 +5,7 @@ date: 2026-03-18 23:39:53 +0800
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
+related: [github-proxy-mirror]
 ---
 
 **最新说明**：由于不可描述的原因，很多镜像源地址已经失效。

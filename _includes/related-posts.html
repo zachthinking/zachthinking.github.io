@@ -1,0 +1,14 @@
+{% if page.related %}
+<div class="related-posts" style="border:1px solid #e1e4e8;border-radius:6px;padding:16px 20px;margin:32px 0;background:#f7f8fa;">
+  <div style="font-size:16px;font-weight:bold;color:#1a1a1a;margin-bottom:10px;">📚 相关阅读</div>
+  {% for slug in page.related %}
+    {% assign p = site.posts | where: "slug", slug | first %}
+    {% if p %}
+    <div style="margin:10px 0;">
+      <a href="{{ p.url | relative_url }}" style="font-size:15px;font-weight:600;color:#2b6cb0;text-decoration:none;">{{ p.title }}</a>
+      <div style="font-size:13px;color:#666;margin-top:2px;">{{ p.excerpt | strip_html | truncate: 60 }}</div>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
