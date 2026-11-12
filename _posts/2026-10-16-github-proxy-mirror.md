@@ -50,6 +50,26 @@ related: [docker-desktop-mirror, huggingface-mirror]
 
 第一个镜像失效时，把前缀换成列表里的其他地址即可。
 
+## 部署开源项目：先领阿里云 8 折优惠券
+
+从 GitHub 下载源码只是第一步。如果要让网站、机器人或后端服务长期在线，可以用阿里云轻量应用服务器或 ECS 部署。我的云小站目前可领 **8 折优惠券**，可用于页面列出的适用云产品；实际使用门槛和有效期以领取页及结算页为准。
+
+<div style="border:1px solid #fed7aa;background:#fffaf5;border-radius:6px;padding:16px;margin:16px 0;">
+  <a href="https://www.aliyun.com/minisite/goods?userCode=ovyc4rns"
+     target="_blank"
+     rel="sponsored nofollow noopener"
+     data-cps-partner="aliyun"
+     data-cps-product="cloud_server"
+     data-cps-source-page="github-proxy-mirror"
+     data-cps-placement="deployment_section"
+     style="display:inline-block;padding:10px 18px;border-radius:6px;background:#ea580c;color:#fff;text-decoration:none;font-weight:600;">
+    领取阿里云 8 折优惠券
+  </a>
+  <p style="margin:12px 0 0;font-size:13px;color:#666;line-height:1.7;">
+    推广说明：这是返佣链接。通过它购买符合条件的产品，我会获得返佣，不会增加你的购买成本；实际优惠与返佣均以阿里云规则为准。
+  </p>
+</div>
+
 ## 只下载单个文件：jsDelivr CDN
 
 如果只需要仓库里的**单个源码文件**（不是 release 附件），用 jsDelivr 更稳——它是正规 CDN，国内有节点，基本不会失效：

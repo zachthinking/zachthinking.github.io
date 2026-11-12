@@ -203,6 +203,26 @@ docker info
 
 在输出信息中，找到 `Registry Mirrors` 部分，如果显示了你配置的镜像源地址，说明配置成功。
 
+## 用云服务器跑 Docker：先领阿里云 8 折优惠券
+
+本地容器跑通后，如果要让网站、API 或自动化任务长期在公网运行，可以把它部署到阿里云轻量应用服务器或 ECS。我的云小站目前可领 **8 折优惠券**，可用于页面列出的适用云产品；实际使用门槛和有效期以领取页及结算页为准。
+
+<div style="border:1px solid #fed7aa;background:#fffaf5;border-radius:6px;padding:16px;margin:16px 0;">
+  <a href="https://www.aliyun.com/minisite/goods?userCode=ovyc4rns"
+     target="_blank"
+     rel="sponsored nofollow noopener"
+     data-cps-partner="aliyun"
+     data-cps-product="cloud_server"
+     data-cps-source-page="docker-desktop-mirror"
+     data-cps-placement="docker_server_section"
+     style="display:inline-block;padding:10px 18px;border-radius:6px;background:#ea580c;color:#fff;text-decoration:none;font-weight:600;">
+    领取阿里云 8 折优惠券
+  </a>
+  <p style="margin:12px 0 0;font-size:13px;color:#666;line-height:1.7;">
+    推广说明：这是返佣链接。通过它购买符合条件的产品，我会获得返佣，不会增加你的购买成本；实际优惠与返佣均以阿里云规则为准。
+  </p>
+</div>
+
 ## 使用阿里云镜像源
 
 如果你想使用阿里云的镜像源，还可以申请专属加速器：
