@@ -75,6 +75,28 @@ pip install modelscope
 modelscope download --model Qwen/Qwen2-0.5B
 ```
 
+## 不想下载模型：直接调用百炼大模型 API
+
+如果只是做问答、翻译或 AI 应用，不一定要先把模型下载到本地。阿里云百炼提供通义千问等模型的 API，可以省去本地部署和显卡成本，适合先小量验证需求。
+
+通过我的云小站可以领取一张 **8 折优惠券**，页面也提供百炼模型推理、知识库等产品。优惠券的适用产品、使用门槛和有效期以阿里云领取页及结算页为准。
+
+<div style="border:1px solid #fed7aa;background:#fffaf5;border-radius:6px;padding:16px;margin:16px 0;">
+  <a href="https://www.aliyun.com/minisite/goods?userCode=ovyc4rns"
+     target="_blank"
+     rel="sponsored nofollow noopener"
+     data-cps-partner="aliyun"
+     data-cps-product="bailian"
+     data-cps-source-page="huggingface-mirror"
+     data-cps-placement="model_api_section"
+     style="display:inline-block;padding:10px 18px;border-radius:6px;background:#ea580c;color:#fff;text-decoration:none;font-weight:600;">
+    领取阿里云 8 折优惠券
+  </a>
+  <p style="margin:12px 0 0;font-size:13px;color:#666;line-height:1.7;">
+    推广说明：这是返佣链接。通过它购买符合条件的产品，我会获得返佣，不会增加你的购买成本；实际优惠与返佣均以阿里云规则为准。
+  </p>
+</div>
+
 ## 常见问题
 
 **为什么直连时好时坏？**

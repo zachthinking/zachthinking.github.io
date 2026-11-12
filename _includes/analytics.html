@@ -6,4 +6,17 @@
   gtag('js', new Date());
 
   gtag('config', 'G-ZM7KN1DZ25');
+
+  document.addEventListener('click', function(event) {
+    const link = event.target.closest('a[data-cps-partner]');
+    if (!link) return;
+
+    gtag('event', 'cps_click', {
+      partner: link.dataset.cpsPartner,
+      product: link.dataset.cpsProduct,
+      source_page: link.dataset.cpsSourcePage || window.location.pathname,
+      placement: link.dataset.cpsPlacement,
+      link_url: link.href
+    });
+  });
 </script>
