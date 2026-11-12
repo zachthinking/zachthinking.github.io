@@ -1,20 +1,22 @@
 ---
 layout: post
-title: "Windows Docker Desktop 配置国内镜像源教程（2026年10月实测）"
+title: "Windows Docker Desktop 配置国内镜像源教程（2026年11月实测）"
 date: 2026-10-25 14:00:00 +0800
+modified_date: 2026-11-12
+description: "2026 年 11 月国内实测 5 个可用 Docker 镜像源，附 Windows Docker Desktop daemon.json 一键复制配置和完整 docker pull 验证结果。"
 categories: [Docker, 教程]
 tags: [docker, windows, 镜像源]
 toc: true
 related: [github-proxy-mirror, huggingface-mirror]
 ---
 
-**最新说明**：由于不可描述的原因，很多镜像源地址已经失效。以下地址于 **2026 年 10 月 25 日在国内网络实测**（registry API + 完整 `docker pull` 双重验证）：
+**最新说明**：由于不可描述的原因，很多镜像源地址已经失效。以下地址于 **2026 年 11 月 12 日在国内网络实测**（registry API + 完整 `docker pull` 双重验证；拉取耗时为单次测试结果）：
 
-- `https://docker.1ms.run`（最快，`hello-world` 完整拉取约 5.5 秒）
-- `https://docker.m.daocloud.io`（约 9.8 秒）
-- `https://docker.xuanyuan.me`（约 11.5 秒）
-- `https://hub.rat.dev`（约 14.9 秒）
-- `https://dockerproxy.net`（约 16.1 秒）
+- `https://dockerproxy.net`（本次最快，`hello-world` 完整拉取约 3 秒）
+- `https://docker.1ms.run`（约 8 秒）
+- `https://hub.rat.dev`（约 9 秒）
+- `https://docker.m.daocloud.io`（约 13 秒）
+- `https://docker.xuanyuan.me`（约 24 秒）
 
 可以一键复制到 `daemon.json` 文件，或 `Docker Desktop` 的 `Docker Engine` 菜单下（建议全部写上，Docker 会按顺序尝试，失效自动 fallback）：
 
@@ -32,11 +34,11 @@ related: [github-proxy-mirror, huggingface-mirror]
   <pre id="docker-config" style="margin:0;font-size:13px;overflow:auto;background:#f6f8fa;padding:12px;border-radius:6px;">
 {
   "registry-mirrors": [
+    "https://dockerproxy.net",
     "https://docker.1ms.run",
-    "https://docker.m.daocloud.io",
-    "https://docker.xuanyuan.me",
     "https://hub.rat.dev",
-    "https://dockerproxy.net"
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me"
   ]
 }
   </pre>
@@ -158,11 +160,11 @@ function copyDockerConfig() {
 ```json
 {
   "registry-mirrors": [
+    "https://dockerproxy.net",
     "https://docker.1ms.run",
-    "https://docker.m.daocloud.io",
-    "https://docker.xuanyuan.me",
     "https://hub.rat.dev",
-    "https://dockerproxy.net"
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me"
   ]
 }
 ```
@@ -179,11 +181,11 @@ function copyDockerConfig() {
 ```json
 {
   "registry-mirrors": [
+    "https://dockerproxy.net",
     "https://docker.1ms.run",
-    "https://docker.m.daocloud.io",
-    "https://docker.xuanyuan.me",
     "https://hub.rat.dev",
-    "https://dockerproxy.net"
+    "https://docker.m.daocloud.io",
+    "https://docker.xuanyuan.me"
   ]
 }
 ```

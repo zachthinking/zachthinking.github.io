@@ -1,19 +1,20 @@
 ---
 layout: post
-title: "GitHub 加速镜像最新可用地址（2026年10月实测）"
+title: "GitHub 加速镜像最新可用地址（2026年11月实测）"
 date: 2026-10-25 12:00:00 +0800
+modified_date: 2026-11-12
+description: "2026 年 11 月国内实测 GitHub 加速镜像，提供 raw 文件、release 附件和 git clone 可用地址及一键复制示例。"
 categories: [GitHub, 教程]
 tags: [github, 镜像, 加速, ghproxy]
 toc: true
 related: [docker-desktop-mirror, huggingface-mirror]
 ---
 
-**最新说明**：GitHub 直连在国内时好时坏，raw 和 release 下载经常超时。以下加速地址于 **2026 年 10 月 25 日在国内网络实测**（raw 文件、release 附件、`git clone` 三种方式逐项验证）：
+**最新说明**：GitHub 直连在国内时好时坏，raw 和 release 下载经常超时。以下加速地址于 **2026 年 11 月 12 日在国内网络实测**（raw 文件、release 附件、`git clone` 三种方式逐项验证）：
 
 - `https://ghfast.top/`（三种方式全部通过）
 - `https://gh-proxy.com/`（三种方式全部通过）
-- `https://gh.llkk.cc/`（三种方式全部通过，偶发超时重试即可）
-- `https://ghproxy.net/`（raw 和 `git clone` 可用；release 大文件不稳定，下载附件优先用前三个）
+- `https://ghproxy.net/`（三种方式全部通过；大文件下载优先用前两个）
 
 用法：**把原始 GitHub 链接完整拼在镜像地址后面**即可，不用改链接本身。
 
@@ -71,8 +72,9 @@ related: [docker-desktop-mirror, huggingface-mirror]
 
 ## 已失效地址（避坑）
 
-以下曾经流行的地址，2026 年 10 月 25 日实测**已不可用**，如果老教程里看到请直接跳过：
+以下曾经流行的地址请直接跳过（除特别标注外，结果为 2026 年 10 月 25 日复测）：
 
+- `gh.llkk.cc`（2026 年 11 月 12 日复测连接超时）
 - `ghproxy.com` / `mirror.ghproxy.com`（原最大镜像站，已关停）
 - `github.moeyy.xyz`（连接失败）
 - `ghproxy.cc`（连接失败）

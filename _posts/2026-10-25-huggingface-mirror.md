@@ -1,26 +1,28 @@
 ---
 layout: post
-title: "HuggingFace 加速镜像最新可用地址（2026年10月实测）"
+title: "hf-mirror.com：HuggingFace 国内镜像加速实测（2026年11月）"
 date: 2026-10-25 15:30:00 +0800
+modified_date: 2026-11-12
+description: "2026 年 11 月国内实测 hf-mirror.com 与 aifasthub.com，提供 HuggingFace 模型网页下载、HF_ENDPOINT 环境变量和 hf download 配置方法。"
 categories: [HuggingFace, 教程]
-tags: [huggingface, 镜像, 加速, AI]
+tags: [huggingface, hf-mirror, 镜像, 加速, AI]
 toc: true
 related: [github-proxy-mirror, docker-desktop-mirror]
 ---
 
-**最新说明**：HuggingFace 直连在国内时好时坏，即使能通速度也不理想。以下方案于 **2026 年 10 月 25 日在国内网络实测**（API 探测 + 10MB 真实下载测速）：
+**最新说明**：HuggingFace 直连在国内时好时坏，即使能通速度也不理想。以下方案于 **2026 年 11 月 12 日在国内网络实测**（API 探测 + 10MB 真实下载测速）：
 
-- `https://hf-mirror.com`（最推荐，下载速度约为直连的 2 倍）
-- `https://aifasthub.com`（备用，略快于直连）
+- `https://hf-mirror.com`（首选，本次 10MB 下载约 1.85 MB/s）
+- `https://aifasthub.com`（备用，本次测速更快，约 2.87 MB/s）
 - `https://modelscope.cn`（魔搭社区，国产模型首选，不是镜像但更好用）
 
-10MB 实测下载速度对比：
+10MB 实测下载速度对比（单次测速仅反映本次国内网络环境）：
 
 | 线路 | 速度 | 结论 |
 |---|---|---|
-| huggingface.co 直连 | 约 0.45 MB/s | 今天能通，但慢，且历史上经常直接断 |
-| **hf-mirror.com** | **约 1.0 MB/s** | 稳定可用，首选 |
-| aifasthub.com | 约 0.57 MB/s | 可作备用 |
+| huggingface.co 直连 | 连接超时 | 本次未能完成下载 |
+| **hf-mirror.com** | **约 1.85 MB/s** | 稳定可用，首选 |
+| aifasthub.com | 约 2.87 MB/s | 本次速度更快，可作备用 |
 
 ## 用法一：网页直接换域名
 
@@ -76,7 +78,7 @@ modelscope download --model Qwen/Qwen2-0.5B
 ## 常见问题
 
 **为什么直连时好时坏？**
-HuggingFace 的页面和文件分布在多个域名和 CDN 上，国内到这些节点的路由不稳定，今天能通不代表明天能通。本文实测当天直连可用但只有 0.45 MB/s，拉一个几 GB 的模型要好几个小时。
+HuggingFace 的页面和文件分布在多个域名和 CDN 上，国内到这些节点的路由不稳定，今天能通不代表明天能通。本文 2026 年 11 月 12 日复测时官网直连超时，两个镜像则都完成了 10MB 文件下载。
 
 **镜像安全吗？**
 镜像本质是中转代理，理论上可以看到传输内容。**不要**在镜像站点登录 HuggingFace 账号，**不要**用镜像拉取需要授权的私有模型。公开模型下载后如担心完整性，可以和官方页面公布的文件哈希值比对。
